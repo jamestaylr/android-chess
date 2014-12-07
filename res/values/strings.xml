@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Chess</string>
+
+    <string name="textview">TextView</string>
+
+</resources>
