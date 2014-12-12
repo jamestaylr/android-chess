@@ -154,12 +154,8 @@ public class Board
     /**
      * Called when the undo button is clicked.
      *
-     * @param from
-     *            the originating location
-     * @param to
-     *            the location to move to
      */
-    public void undoClicked(Location from, Location to)
+    public Move undoClicked()
     {
         Move move;
         try
@@ -168,7 +164,7 @@ public class Board
         }
         catch (EmptyStackException e)
         {
-            return;
+            return null;
         }
 
         move.piece().setLocation(move.from());
@@ -178,6 +174,8 @@ public class Board
             getPieces().add(move.getRemovedPiece());
         }
         turn--;
+
+        return move;
     }
 
 
@@ -480,7 +478,7 @@ public class Board
      *            the location to be checked
      * @return the piece in the location if one exists, null otherwise
      */
-    private Piece getPieceAtLocation(Location target)
+    protected Piece getPieceAtLocation(Location target)
     {
         for (Piece piece : pieces)
         {

@@ -7,7 +7,6 @@ import sofia.app.ShapeScreen;
 // -------------------------------------------------------------------------
 /**
  * Handles the application view and associated graphics functions.
- *
  * @author James Taylor <jamestay@vt.edu>
  * @version 2012.12.02
  */
@@ -84,31 +83,30 @@ public class View
 
     // ----------------------------------------------------------
     /**
-     * Redraws all components, refreshing the screen.
+     * Redraws components at a given location, refreshing the screen.
      */
-    protected void redraw()
+    protected void redraw(Location location)
     {
-        clear();
+        Piece piece = board.getPieceAtLocation(location);
 
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                add(tiles[i][j]);
-            }
-        }
+        remove(tiles[location.file()][location.rank()]);
+        add(tiles[location.file()][location.rank()]);
 
-        for (Piece piece : board.getPieces())
+        if (piece != null)
         {
+            // if there is a piece at the location, remove the old shape and
+            // redraw it
+            remove(piece.getShape());
+            piece.revalidate(tileLength);
             add(piece.getShape());
         }
+
     }
 
 
     // ----------------------------------------------------------
     /**
      * Gets the size of the tile.
-     *
      * @return the calculated tile length
      */
     public static int getTileLength()
@@ -120,11 +118,8 @@ public class View
     // ----------------------------------------------------------
     /**
      * Called when the user touches the screen.
-     *
-     * @param x
-     *            the x coordinate location of the touch event
-     * @param y
-     *            the y coordinate location of the touch event
+     * @param x the x coordinate location of the touch event
+     * @param y the y coordinate location of the touch event
      */
     public void onTouchDown(float x, float y)
     {
@@ -135,11 +130,8 @@ public class View
     // ----------------------------------------------------------
     /**
      * Processes the user input.
-     *
-     * @param x
-     *            the x-coordinate location of the touch event
-     * @param y
-     *            the y-coordinate location of the touch event
+     * @param x the x-coordinate location of the touch event
+     * @param y the y-coordinate location of the touch event
      */
     private void processInput(float x, float y)
     {
@@ -178,6 +170,9 @@ public class View
             to = new Location(ix, iy);
             board.move(target, from, to, this);
 
+            redraw(to);
+            redraw(from);
+
             from = null;
 
             if (board.getTurns() % 2 == 1)
@@ -189,7 +184,6 @@ public class View
                 status.setText("White's turn!");
             }
 
-            redraw();
         }
 
     }
@@ -201,7 +195,7 @@ public class View
      */
     public void undoClicked()
     {
-        board.undoClicked(from, to);
+        Move move = board.undoClicked();
 
         if (board.getTurns() % 2 == 1)
         {
@@ -212,14 +206,17 @@ public class View
             status.setText("White's turn!");
         }
 
-        redraw();
+        if (move != null)
+        {
+            redraw(move.from());
+            redraw(move.to());
+        }
     }
 
 
     // ----------------------------------------------------------
     /**
      * Gets the chess board object; for testing purposes.
-     *
      * @return board the chess board object
      */
     protected Board getBoard()
