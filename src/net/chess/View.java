@@ -98,7 +98,7 @@ public class View
             // if there is a piece at the location, remove the old shape and
             // redraw it
             remove(piece.getShape());
-            piece.revalidate(tileLength);
+            piece.revalidate();
             add(piece.getShape());
         }
 

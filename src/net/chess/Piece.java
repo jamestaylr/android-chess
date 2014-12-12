@@ -87,7 +87,7 @@ public class Piece
     {
         this.type = type;
         this.location = location;
-        this.revalidate(View.getTileLength());
+        this.revalidate();
     }
 
 
@@ -112,7 +112,7 @@ public class Piece
     public void setLocation(Location newLocation)
     {
         location = newLocation;
-        this.revalidate(View.getTileLength());
+        this.revalidate();
     }
 
 
@@ -178,12 +178,12 @@ public class Piece
      * @param tileLength the length of the tile as determined by the
      *        {@link View}
      */
-    public void revalidate(int tileLength)
+    public void revalidate()
     {
         TextShapeFilled textShape =
             new TextShapeFilled("" + this.getSymbol(), this.getLocation()
-                .rank() * tileLength, this.getLocation().file() * tileLength);
-        textShape.setTypeSize(tileLength / 5);
+                .rank() * View.getTileLength(), this.getLocation().file() * View.getTileLength());
+        textShape.setTypeSize(View.getTileLength() / 7);
 
         textShape.setColor(Color.black);
 
