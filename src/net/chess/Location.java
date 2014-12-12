@@ -19,10 +19,8 @@ public class Location
     /**
      * Creates new Location object.
      *
-     * @param rank
-     *            the x-coordinate location of the position 0-7
-     * @param file
-     *            the y-coordinate location of the position 0-7
+     * @param rank the x-coordinate location of the position 0-7
+     * @param file the y-coordinate location of the position 0-7
      */
     public Location(int rank, int file)
     {

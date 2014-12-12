@@ -155,10 +155,8 @@ public class ViewTests
      * Simulates touching down on the middle of the specified cell in the chess
      * board.
      *
-     * @param x
-     *            - the x-coordinate location of the touch event
-     * @param y
-     *            - the y-coordinate location of the touch event
+     * @param x - the x-coordinate location of the touch event
+     * @param y - the y-coordinate location of the touch event
      */
     private void tapCell(int x, int y)
     {

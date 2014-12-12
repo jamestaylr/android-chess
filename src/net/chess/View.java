@@ -7,6 +7,7 @@ import sofia.app.ShapeScreen;
 // -------------------------------------------------------------------------
 /**
  * Handles the application view and associated graphics functions.
+ *
  * @author James Taylor <jamestay@vt.edu>
  * @version 2012.12.02
  */
@@ -107,6 +108,7 @@ public class View
     // ----------------------------------------------------------
     /**
      * Gets the size of the tile.
+     *
      * @return the calculated tile length
      */
     public static int getTileLength()
@@ -118,6 +120,7 @@ public class View
     // ----------------------------------------------------------
     /**
      * Called when the user touches the screen.
+     *
      * @param x the x coordinate location of the touch event
      * @param y the y coordinate location of the touch event
      */
@@ -130,6 +133,7 @@ public class View
     // ----------------------------------------------------------
     /**
      * Processes the user input.
+     *
      * @param x the x-coordinate location of the touch event
      * @param y the y-coordinate location of the touch event
      */
@@ -217,6 +221,7 @@ public class View
     // ----------------------------------------------------------
     /**
      * Gets the chess board object; for testing purposes.
+     *
      * @return board the chess board object
      */
     protected Board getBoard()

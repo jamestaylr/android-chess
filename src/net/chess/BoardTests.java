@@ -56,7 +56,8 @@ public class BoardTests
         assertEquals(piece, this.getPieceAtLocation(new Location(0, 4)));
     }
 
- // ----------------------------------------------------------
+
+    // ----------------------------------------------------------
     /**
      * Tests the {@link Board#move(Piece, Location, Location, View)} method.
      */
@@ -265,8 +266,7 @@ public class BoardTests
     /**
      * Gets the piece at a specific location and returns it if it exists.
      *
-     * @param target
-     *            the location to be checked
+     * @param target the location to be checked
      * @return the piece in the location if one exists, null otherwise
      */
     private Piece getPieceAtLocation(Location target)

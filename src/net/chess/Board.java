@@ -9,7 +9,6 @@ import java.util.LinkedList;
 // -------------------------------------------------------------------------
 /**
  * Defines the board and board functions.
- *
  * @author James Taylor <jamestay@vt.edu>
  * @author Skylar Edwards <skyed@vt.edu>
  * @version 2014.12.03
@@ -79,15 +78,10 @@ public class Board
     // ----------------------------------------------------------
     /**
      * Called by the view when the user interacts with the screen.
-     *
-     * @param target
-     *            the target piece to move
-     * @param from
-     *            the initial location of the piece to move
-     * @param to
-     *            the final location
-     * @param view
-     *            the screen activity; used for triggering screen events
+     * @param target the target piece to move
+     * @param from the initial location of the piece to move
+     * @param to the final location
+     * @param view the screen activity; used for triggering screen events
      */
     public void move(Piece target, Location from, Location to, View view)
     {
@@ -153,7 +147,6 @@ public class Board
     // ----------------------------------------------------------
     /**
      * Called when the undo button is clicked.
-     *
      */
     public Move undoClicked()
     {
@@ -182,7 +175,6 @@ public class Board
     // ----------------------------------------------------------
     /**
      * Checks to see if the move is valid for a piece.
-     *
      * @return true if the move is valid; false if the move is not valid
      */
     private boolean isValid(Piece piece, Location to)
@@ -318,8 +310,7 @@ public class Board
             {
                 return false;
             }
-            if (((Math.abs(to.rank() - piece.getLocation().rank()) == 1)
-                && (!compareColorOfPieceAtLocation(
+            if (((Math.abs(to.rank() - piece.getLocation().rank()) == 1) && (!compareColorOfPieceAtLocation(
                 piece,
                 to))) && (getPieceAtLocation(to) != null))
             {
@@ -336,8 +327,7 @@ public class Board
             if (to.file() == piece.getLocation().file() - 1)
             {
                 return piece.getLocation().rank() == to.rank()
-                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 1
-                    && !compareColorOfPieceAtLocation(
+                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 1 && !compareColorOfPieceAtLocation(
                         piece,
                         to));
             }
@@ -345,8 +335,7 @@ public class Board
                 && (piece.getLocation().file() == 6))
             {
                 return piece.getLocation().rank() == to.rank()
-                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 2
-                    && !compareColorOfPieceAtLocation(
+                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 2 && !compareColorOfPieceAtLocation(
                         piece,
                         to));
             }
@@ -370,8 +359,7 @@ public class Board
             {
                 return false;
             }
-            if (((Math.abs(to.rank() - piece.getLocation().rank()) == 1)
-                && (!compareColorOfPieceAtLocation(
+            if (((Math.abs(to.rank() - piece.getLocation().rank()) == 1) && (!compareColorOfPieceAtLocation(
                 piece,
                 to))) && (getPieceAtLocation(to) != null))
             {
@@ -388,8 +376,7 @@ public class Board
             if (to.file() == piece.getLocation().file() + 1)
             {
                 return piece.getLocation().rank() == to.rank()
-                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 1
-                    && !compareColorOfPieceAtLocation(
+                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 1 && !compareColorOfPieceAtLocation(
                         piece,
                         to));
             }
@@ -397,8 +384,7 @@ public class Board
                 && (piece.getLocation().file() == 1))
             {
                 return piece.getLocation().rank() == to.rank()
-                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 2
-                    && !compareColorOfPieceAtLocation(
+                    || (Math.abs(piece.getLocation().rank() - to.rank()) == 2 && !compareColorOfPieceAtLocation(
                         piece,
                         to));
             }
@@ -420,9 +406,7 @@ public class Board
      * Checks to see if the piece moved should be moved. White pieces always
      * move first. White pieces move on even turns and black pieces move on odd
      * turns.
-     *
-     * @param piece
-     *            the piece about to be moved
+     * @param piece the piece about to be moved
      * @return true if the turn is in order; false if the turn is out of order
      */
     protected boolean properTurn(Piece piece)
@@ -461,7 +445,6 @@ public class Board
     // ----------------------------------------------------------
     /**
      * Gets the list of pieces that are registered on the board.
-     *
      * @return pieces the list of pieces on the board
      */
     public LinkedList<Piece> getPieces()
@@ -473,9 +456,7 @@ public class Board
     // ----------------------------------------------------------
     /**
      * Gets the piece at a specific location and returns it if it exists.
-     *
-     * @param target
-     *            the location to be checked
+     * @param target the location to be checked
      * @return the piece in the location if one exists, null otherwise
      */
     protected Piece getPieceAtLocation(Location target)
@@ -496,11 +477,8 @@ public class Board
      * Helper method that checks the locations between a piece and a target
      * location that are in the same row for other pieces that would make a move
      * invalid.
-     *
-     * @param piece
-     *            the piece that is attempting to move
-     * @param to
-     *            the location the piece is trying to move to
+     * @param piece the piece that is attempting to move
+     * @param to the location the piece is trying to move to
      * @return true if there are no pieces between this piece and the target
      *         location; false if there are pieces between this piece and the
      *         target location
@@ -576,11 +554,8 @@ public class Board
     /**
      * Helper method that checks the locations diagonal to a piece and between
      * it and a target location to see if there are any pieces in the way.
-     *
-     * @param piece
-     *            the piece that wants to move
-     * @param to
-     *            the location the piece is trying to move to
+     * @param piece the piece that wants to move
+     * @param to the location the piece is trying to move to
      * @return true if there are no pieces between piece and it's target
      *         location in any diagonal direction; false otherwise
      */
@@ -644,12 +619,9 @@ public class Board
     /**
      * Checks a target location to see if there is a piece there of the same
      * color as a given piece.
-     *
-     * @param piece
-     *            the piece that the piece at a location is compared to
-     * @param target
-     *            the location that is being checked to see if there is a piece
-     *            there of the same color
+     * @param piece the piece that the piece at a location is compared to
+     * @param target the location that is being checked to see if there is a
+     *        piece there of the same color
      * @return true if the piece at the location is the same color as the given
      *         piece; false otherwise
      */
@@ -665,7 +637,6 @@ public class Board
     // ----------------------------------------------------------
     /**
      * Gets the turn number, used for rendering purposes.
-     *
      * @return turn the turn number
      */
     protected int getTurns()

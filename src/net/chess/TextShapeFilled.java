@@ -19,12 +19,9 @@ public class TextShapeFilled
     /**
      * Creates a new filled text object.
      *
-     * @param text
-     *            the String of the text to draw on the screen
-     * @param x
-     *            the x-coordinate location of the shape
-     * @param y
-     *            the y-coordinate location of the shape
+     * @param text the String of the text to draw on the screen
+     * @param x the x-coordinate location of the shape
+     * @param y the y-coordinate location of the shape
      */
     public TextShapeFilled(String text, float x, float y)
     {

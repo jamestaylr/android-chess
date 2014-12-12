@@ -80,10 +80,8 @@ public class Piece
     /**
      * Create a new Piece object.
      *
-     * @param type
-     *            the type of the piece
-     * @param location
-     *            the location of the symbol on the board
+     * @param type the type of the piece
+     * @param location the location of the symbol on the board
      */
     public Piece(Type type, Location location)
     {
@@ -109,8 +107,7 @@ public class Piece
     /**
      * Sets the location of the piece on the board.
      *
-     * @param newLocation
-     *            the new location of the piece
+     * @param newLocation the new location of the piece
      */
     public void setLocation(Location newLocation)
     {
@@ -178,8 +175,8 @@ public class Piece
      * position of the object. Called before {@link View#redraw()} to speed up
      * the drawing process.
      *
-     * @param tileLength
-     *            the length of the tile as determined by the {@link View}
+     * @param tileLength the length of the tile as determined by the
+     *        {@link View}
      */
     public void revalidate(int tileLength)
     {
@@ -210,8 +207,7 @@ public class Piece
     /**
      * Sets the {@link TextShapeFilled} graphics object for the piece.
      *
-     * @param textShape
-     *            the graphics object for the piece
+     * @param textShape the graphics object for the piece
      */
     public void setShape(TextShapeFilled textShape)
     {

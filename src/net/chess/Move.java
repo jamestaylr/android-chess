@@ -19,12 +19,9 @@ public class Move
     /**
      * Create new Move object.
      *
-     * @param piece
-     *            the piece moved
-     * @param from
-     *            the original location of the piece
-     * @param to
-     *            the final location of the piece
+     * @param piece the piece moved
+     * @param from the original location of the piece
+     * @param to the final location of the piece
      */
     public Move(Piece piece, Location from, Location to)
     {
@@ -37,14 +34,10 @@ public class Move
     /**
      * Create new Move object; used if a move eliminates a piece from the board.
      *
-     * @param piece
-     *            the piece moved
-     * @param from
-     *            the original location of the piece
-     * @param to
-     *            the final location of the piece
-     * @param removed
-     *            the piece removed from the board
+     * @param piece the piece moved
+     * @param from the original location of the piece
+     * @param to the final location of the piece
+     * @param removed the piece removed from the board
      */
     public Move(Piece piece, Location from, Location to, Piece removed)
     {
