@@ -56,8 +56,8 @@ public class Board
         pieces.add(new Piece(Type.WHITE_PAWN, new Location(7, 6)));
 
         // 'black' pieces
-        pieces.add(new Piece(Type.BLACK_KING, new Location(3, 0)));
-        pieces.add(new Piece(Type.BLACK_QUEEN, new Location(4, 0)));
+        pieces.add(new Piece(Type.BLACK_KING, new Location(4, 0)));
+        pieces.add(new Piece(Type.BLACK_QUEEN, new Location(3, 0)));
         pieces.add(new Piece(Type.BLACK_ROOK, new Location(0, 0)));
         pieces.add(new Piece(Type.BLACK_ROOK, new Location(7, 0)));
         pieces.add(new Piece(Type.BLACK_BISHOP, new Location(2, 0)));

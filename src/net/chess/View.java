@@ -51,7 +51,7 @@ public class View
                         (j * tileLength) + tileLength,
                         (i * tileLength) + tileLength);
 
-                if ((i + j) % 2 == 0)
+                if ((i + j) % 2 == 1)
                 {
                     tile.setFillColor(Color.bisque);
                 }
