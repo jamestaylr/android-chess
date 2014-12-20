@@ -183,7 +183,7 @@ public class Piece
         TextShapeFilled textShape =
             new TextShapeFilled("" + this.getSymbol(), this.getLocation()
                 .rank() * View.getTileLength(), this.getLocation().file() * View.getTileLength());
-        textShape.setTypeSize(View.getTileLength() / 7);
+        textShape.setTypeSize(View.getTileLength() / 5);
 
         textShape.setColor(Color.black);
 
